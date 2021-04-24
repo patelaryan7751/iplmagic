@@ -6,7 +6,7 @@
   <meta data-brackets-id='438' charset="utf-8">
   <meta data-brackets-id='439' content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title data-brackets-id='440'>Dashboard</title>
+  <title data-brackets-id='440'>Team</title>
   <meta data-brackets-id='441' content="" name="description">
   <meta data-brackets-id='442' content="" name="keywords">
 
@@ -122,16 +122,19 @@
     <section data-brackets-id='466' id="new">
       <div data-brackets-id='467' class="container" data-aos="fade-up">
         <header data-brackets-id='468' class="section-header">
-          <h3 data-brackets-id='469' class="section-title" style="color: #000;">Upcoming matches</h3>
+          <h3 data-brackets-id='469' class="section-title" style="color: #000;">Select Your Team</h3>
           <p data-brackets-id='470'>Click to participate</p>
         </header>
-        <div data-brackets-id='471' class="row" data-aos="fade-up" data-aos-delay="200">
-          <div data-brackets-id='472' class="c1 col-lg-5 col-md-5">
+         <div data-brackets-id='471' class="row" >
+             <div id="bats"><h1>Batsman</h1><br></div>
+              <div id="bowl"><h1>Bowler</h1><br></div>
+         <!-- <div data-brackets-id='472' class="c1 col-lg-5 col-md-5">
             <div data-brackets-id='473' class="logo">
               <div data-brackets-id='474' class="row">
-                <div data-brackets-id='475' class="col-5"><img data-brackets-id='476' src="img/srh.png" class="img-fuid"><br data-brackets-id='477'><span data-brackets-id='478' id="t1">Team 1</span></div>
+               <div data-brackets-id='475' class="col-5"><img data-brackets-id='476' src="img/srh.png" class="img-fuid"><br data-brackets-id='477'><span data-brackets-id='478' id="t1">Team 1</span></div>
                 <div data-brackets-id='479' class="col-2" style="font-weight: 700;">VS</div>
                   <div data-brackets-id='480' class="col-5"><img data-brackets-id='481' src="img/rcb.png" class="img-fuid"><br data-brackets-id='482'><span data-brackets-id='483' id="t2">Team 2</span></div>
+                  
               </div>
             </div>
             <div data-brackets-id='484' class="info">
@@ -141,7 +144,7 @@
             <a data-brackets-id='487' href="#" class="btn-get-started animate__animated animate__fadeInUp">Create Team</a>
           </div>
 
-          <div data-brackets-id='488' class="col-lg-1 col-md-2"></div>
+          <div data-brackets-id='488' class="col-lg-1 col-md-2"></div>-->
 
         <!--  <div class="c2 col-lg-5 col-md-5">
             <div class="logo">
@@ -217,16 +220,26 @@
     <script data-brackets-id='503'>
 let match=Math.floor(Math.random()*232);
     console.log(`(${match}).json`)
-let url = `json/(${match}).json`;
+let url = `json/(1).json`;
 console.log(url);
 fetch(url)
 .then(res => res.json())
 .then((out) => {
   console.log('Checkout this JSON! ', out);
-    console.log(out.info.teams[0]);
-    document.getElementById("t1").textContent=out.info.teams[0];
-    document.getElementById("t2").textContent=out.info.teams[1];
+    console.log(Object.entries(out)[2])
+ var ty=Object.entries(out)[2][1][0];
+var yu =Object.entries(ty)[0][1].deliveries;
+    console.log(yu.length)
+    for(i=0;i<yu.length;i++){
+        var tu = Object.entries(yu)[i][1];
+    var du=Object.entries(tu);
+ console.log(du[0][1].batsman)
+    }
+
    
+    
+    
+    
 })
 .catch(err => { throw err });
 </script>
