@@ -1,7 +1,7 @@
 <h1 >Ipl Magic</h1>
 <script>
-
-let url = 'json/335982.json';
+let match=Math.floor(Math.random()*232);
+let url = 'json/'+toString(match)+'.json';
 
 fetch(url)
 .then(res => res.json())
