@@ -117,7 +117,7 @@ firebase.auth().onAuthStateChanged(function(user) {
            if(data.val()){
                               var pq=document.getElementById("loadar");
     pq.style.display="none";
-               window.open('../index.html','_self');
+               window.open('../dashboard.html','_self');
 }
            else{
                               var pq=document.getElementById("loadar");
