@@ -226,17 +226,57 @@ fetch(url)
 .then(res => res.json())
 .then((out) => {
   console.log('Checkout this JSON! ', out);
+        var batsman1 = [];
+        var bowler1 = [];
+            var batsman2 = [];
+        var bowler2 = [];
     console.log(Object.entries(out)[2])
- var ty=Object.entries(out)[2][1][0];
+    
+    //1st innings
+    for(j=0;j<2;j++){
+    
+ var ty=Object.entries(out)[2][1][j];
 var yu =Object.entries(ty)[0][1].deliveries;
-    console.log(yu.length)
+    console.log(yu)
+
     for(i=0;i<yu.length;i++){
         var tu = Object.entries(yu)[i][1];
     var du=Object.entries(tu);
- console.log(du[0][1].batsman)
+ if(j==0){
+        batsman1.push(du[0][1].non_striker)
+        batsman1.push(du[0][1].batsman)
+        bowler2.push(du[0][1].bowler)
+ }
+        if(j==1){
+            batsman2.push(du[0][1].non_striker)
+        batsman2.push(du[0][1].batsman)
+        bowler1.push(du[0][1].bowler)
+        }
     }
-
+ }
+    
+    function getUnique(array){
+        var uniqueArray = [];
+        
+        // Loop through array values
+        for(var value of array){
+            if(uniqueArray.indexOf(value) === -1){
+                uniqueArray.push(value);
+            }
+        }
+        return uniqueArray;
+    }
+   var batsmen1 = getUnique(batsman1);
+      var bowler1 = getUnique(bowler1);
+        var batsmen2 = getUnique(batsman2);
+      var bowler2 = getUnique(bowler2);
+    console.log(batsmen1);
+    console.log(bowler1);
+        console.log(batsmen2);
+    console.log(bowler2);
    
+    
+    
     
     
     
