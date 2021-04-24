@@ -1,0 +1,12 @@
+<h1 >Ipl Magic</h1>
+<script>
+
+let url = 'json/335982.json';
+
+fetch(url)
+.then(res => res.json())
+.then((out) => {
+  console.log('Checkout this JSON! ', out);
+})
+.catch(err => { throw err });
+</script>
