@@ -1,10 +1,3 @@
-/**
-* Template Name: BizPage - v3.1.0
-* Template URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -108,7 +101,41 @@ h1, h2, h3, h4, h5, h6 {
     transform: rotate(360deg);
   }
 }
-
+/*--------------------------------------------------------------
+# cards
+--------------------------------------------------------------*/
+#new {
+  background-color:#ddd; 
+  padding: 16px;
+}
+.c1,.c2 {
+  background:#ddd;
+  display: flex;
+  margin: 6px 12px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+  padding: 10px;
+}
+.c1:hover{
+  transform:translateY(-5px);
+  box-shadow: 5px 10px 15px #1E90FF;
+}
+.c2:hover{
+  transform:translateY(-5px);
+  box-shadow: 5px 10px 15px #1E90FF;
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.logo img {
+  border-radius: 5px;
+}
+/*--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
